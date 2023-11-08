@@ -1,0 +1,53 @@
+<div
+  class="fixed top-0 z-50 right-0 left-0 bg-[#69f0ae] text-gray-800 px-5 lg:px-20"
+>
+  <div class="flex h-16 items-center justify-between">
+    <div class="flex items-center">
+      <div class="mr-5">
+        <img
+          class="w-8"
+          src="https://avatars.githubusercontent.com/u/49311691?v=4"
+          alt="Code with Vraj"
+        />
+      </div>
+
+      <div class="">
+        <div class="flex space-x-4">
+          <a routerLink="/" class="text-gray-800">Shop with Vraj</a>
+          <div>
+            <button (click)="openNvabarContent('men')" mat-button>Men</button>
+          </div>
+          <div>
+            <button (click)="openNvabarContent('women')" mat-button>
+              Women
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center">
+      <button (click)="navigateTo('cart')" mat-icon-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button mat-raised-button color="accent">LOGIN</button>
+      <div class="relative ml-3 flex items-center">
+        <div class="flex items-center space-x-5">
+          <span class="font-bold text-lg"> Vraj </span>
+          <button mat-button [matMenuTriggerFor]="profileMenu">
+            <img
+              class="h-7 w-7"
+              src="https://cdn.pixabay.com/photo/2023/06/23/11/23/ai-generated-8083323_640.jpg"
+              alt=""
+            />
+          </button>
+          <mat-menu #profileMenu="matMenu">
+            <button mat-menu-item>Orders</button>
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item>Logout</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
