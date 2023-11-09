@@ -1,7 +1,5 @@
-<div
-  class="fixed top-0 z-50 right-0 left-0 bg-[#69f0ae] text-gray-800 px-5 lg:px-20"
->
-  <div class="flex h-16 items-center justify-between">
+<div class="fixed top-0 z-50 right-0 left-0 bg-[#69f0ae] text-gray-800">
+  <div class="px-5 lg:px-20 flex h-16 items-center justify-between">
     <div class="flex items-center">
       <div class="mr-5">
         <img
@@ -12,13 +10,25 @@
       </div>
 
       <div class="">
-        <div class="flex space-x-4">
-          <a routerLink="/" class="text-gray-800">Shop with Vraj</a>
+        <div class="flex items-center space-x-4">
+          <a routerLink="/" class="text-gray-800 font-semibold text-lg"
+            >Shop with Vraj</a
+          >
           <div>
-            <button (click)="openNvabarContent('men')" mat-button>Men</button>
+            <button
+              class="open-button"
+              (click)="openNavbarContent('men')"
+              mat-button
+            >
+              Men
+            </button>
           </div>
           <div>
-            <button (click)="openNvabarContent('women')" mat-button>
+            <button
+              class="open-button"
+              (click)="openNavbarContent('women')"
+              mat-button
+            >
               Women
             </button>
           </div>
@@ -49,5 +59,12 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div
+    *ngIf="isNavBarContentOpen"
+    class="absolute right-0 left-0 modal-container"
+  >
+    <app-nav-content [selectedSection]="currentSection" />
   </div>
 </div>
